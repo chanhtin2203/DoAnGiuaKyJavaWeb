@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+   <constant name="struts.enable.DynamicMethodInvocation"
+       value="false" />
+        
+   <constant name="struts.devMode" value="true" />
+   <constant name="struts.custom.i18n.resources"
+       value="ApplicationResources" />
+ 
+   <package name="default" namespace="/" extends="struts-default">
+       <action name="login"
+           class="org.o7planning.tutorial.struts2xml.action.LoginAction">
+           <result name="success" type="redirect">/userInfo</result>
+           <result name="error">/WEB-INF/pages/Login.jsp</result>
+       </action>
+       
+       <action name="userInfo"
+           class="org.o7planning.tutorial.struts2xml.action.UserInfoAction">
+           <result name="userInfoPage">/WEB-INF/pages/UserInfo.jsp</result>
+       </action>
+       
+   </package>  
+    
+</struts>
